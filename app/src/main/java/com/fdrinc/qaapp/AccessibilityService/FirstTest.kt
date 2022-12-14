@@ -6,14 +6,12 @@ import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.os.bundleOf
 import com.fdrinc.qaapp.MainActivity
+import com.fdrinc.qaapp.TestsStatus
 import kotlinx.coroutines.delay
 
-class NodeInfo : AccessibilityNodeInfo() {
-
+class FirstTest : AccessibilityNodeInfo() {
 
     suspend fun firstTest() {
-
-        var isDone = false
 
         val nameText = Bundle()
         val whereToBuyText = Bundle()
@@ -50,11 +48,9 @@ class NodeInfo : AccessibilityNodeInfo() {
 
         delay(1000)
         val cheeseCard: AccessibilityNodeInfo =
-            EventRepo.rootElement?.findAccessibilityNodeInfosByViewId("com.fdrinc.mylist:id/one_item")!!.get(2)
+            EventRepo.rootElement?.findAccessibilityNodeInfosByViewId("com.fdrinc.mylist:id/one_item")!!.get(1)
         if (cheeseCard.isVisibleToUser) {
-            val mainActivity = MainActivity()
-            mainActivity.firstTestDone()
-
+            TestsStatus.firstTestisDone = true
         }
     }
 }
