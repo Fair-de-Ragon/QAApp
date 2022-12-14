@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">QAApp</string>
     <string name="accessibility_description">Some</string>
+    <string name="firstTestCheckBoxText">First Test</string>
 </resources>
