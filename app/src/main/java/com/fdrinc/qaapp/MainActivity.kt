@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.fdrinc.qaapp.AccessibilityService.FirstTest
 import kotlinx.coroutines.launch
@@ -18,8 +19,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        checkTests()
 
         runAccessibilityButton = findViewById(R.id.goToSettings)
         runAccessibilityButton.setOnClickListener {
@@ -49,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             firstTestCheckBox = findViewById(R.id.firstTestCheckBox)
             firstTestCheckBox.isChecked = true
         }
+    }
+
+    fun showToast(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
 
 }
